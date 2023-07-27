@@ -10,5 +10,8 @@ public class TicketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket);
+
+        EditText editText = findViewById(R.id.editText);
+        String userInput = editText.getText().toString();
     }
 }

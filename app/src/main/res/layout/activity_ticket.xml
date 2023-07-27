@@ -8,24 +8,47 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/appName"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#AC0D0D"
-        android:paddingTop="10sp"
-        android:paddingLeft="10sp"
-        android:text="JalIhara"
-        android:textAlignment="textStart"
-        android:textColor="#FBE6C2"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        bord>
 
-    <ImageView
-        android:id="@+id/dashboardicon"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src=""/>
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#AC0D0D"
+            android:paddingTop="10sp"
+            android:paddingLeft="10sp"
+            android:text="JalIhara"
+            android:textAlignment="textStart"
+            android:textColor="#FBE6C2"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dashboardicon"
+            android:layout_width="52dp"
+            android:layout_height="54dp"
+            android:src="@drawable/ic_person"
+            tools:layout_editor_absoluteX="343dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="294sp"
+        android:layout_height="30sp"
+        android:layout_margin="16sp"
+        android:background="@drawable/edittext_border"
+        android:hint="Search for event..."
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>
