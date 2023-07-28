@@ -4,11 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import java.util.Timer;
+import java.util.TimerTask;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +29,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private TextView menuItem1;
     private TextView menuItem2;
     private TextView menuItem3;
-
+    private ViewPager viewPager;
+    private int[] imageIds = {R.drawable.banner1, R.drawable.banner3, R.drawable.banner4, R.drawable.banner5};
+    private int currentPage = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +58,29 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         menuItem1.setOnClickListener(this);
         menuItem2.setOnClickListener(this);
         menuItem3.setOnClickListener(this);
+
+        viewPager = findViewById(R.id.viewPager);
+        CarouselAdapter adapter = new CarouselAdapter(this, imageIds);
+        viewPager.setAdapter(adapter);
+
+        // Auto-scroll the ViewPager
+        final Handler handler = new Handler();
+        final Runnable update = new Runnable() {
+            public void run() {
+                if (currentPage == imageIds.length) {
+                    currentPage = 0;
+                }
+                viewPager.setCurrentItem(currentPage++, true);
+            }
+        };
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(update);
+            }
+        }, 0, 1000); // Delay 5 seconds and repeat every 5 seconds
     }
 
     private void toggleMenu() {
