@@ -8,48 +8,57 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <include layout="@layout/navbar"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/search_bar"
         >
 
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#AC0D0D"
-            android:paddingTop="10sp"
-            android:paddingLeft="10sp"
-            android:text="JalIhara"
-            android:textAlignment="textStart"
+        <ImageView
+            android:id="@+id/iconSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="10dp" />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@null"
+            android:hint="Search something..."
+            android:longClickable="false"
+            android:padding="10dp"
             android:textColor="#FBE6C2"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textColorHint="#FBE6C2"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iconFilter"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/iconSearch"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/dashboardicon"
-            android:layout_width="52dp"
-            android:layout_height="54dp"
-            android:src="@drawable/ic_person"
-            tools:layout_editor_absoluteX="343dp"
-            tools:layout_editor_absoluteY="0dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/iconFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filter"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="294sp"
-        android:layout_height="30sp"
-        android:layout_margin="16sp"
-        android:background="@drawable/edittext_border"
-        android:hint="Search for event..."
-        android:padding="8dp"
-        android:textColor="@android:color/white"
-        android:textColorHint="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:layout_width="match_parent"

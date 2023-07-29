@@ -98,15 +98,15 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.menu_home:
                         // Handle menu item 1 click
                         return true;
-//                    case R.id.menu_view_tickets:
-//                        // Handle menu item 2 click
-//                        Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
-//                        startActivity(intent);
-//                    // Add more menu items as needed
-//                    case R.id.menu_about_us:
-//                        // Handle menu item 2 click
-//                        Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
-//                        startActivity(intent);
+                    case R.id.menu_view_tickets:
+                        // Handle menu item 2 click
+                        Intent intent = new Intent(HomeActivity.this, TicketActivity.class);
+                        startActivity(intent);
+                    // Add more menu items as needed
+                    case R.id.menu_about_us:
+                        // Handle menu item 2 click
+                        Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                        startActivity(intent);
                     case R.id.menu_logout:
                         // Handle menu item 2 click
                         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
