@@ -1,0 +1,24 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background circle -->
+    <item>
+        <shape
+            android:shape="oval">
+            <solid android:color="#FEFFFFFF" /> <!-- 94% opacity (E6) + yellow color (#FEDD00) -->
+        </shape>
+    </item>
+
+    <!-- Foreground (hole) circle -->
+    <item
+        android:bottom="8dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp">
+        <shape
+            android:shape="oval">
+            <solid android:color="#00000000" />
+            <stroke
+                android:width="4dp"
+                android:color="#F8F8F8" />
+        </shape>
+    </item>
+</layer-list>
