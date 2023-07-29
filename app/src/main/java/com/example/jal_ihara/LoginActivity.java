@@ -2,10 +2,10 @@ package com.example.jal_ihara;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText username, password;
@@ -32,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         password.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent event) {
-                final int right=2;
+                final int right = 2;
 
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (event.getRawX() >= password.getRight() - password.getCompoundDrawables()[right].getBounds().width()) {
@@ -62,28 +65,44 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         usernameError = findViewById(R.id.usernameError);
+        passwordError = findViewById(R.id.passwordError);
         loginBtn = findViewById(R.id.loginButton);
-        loginBtn.setOnClickListener((e)->{
+        loginBtn.setOnClickListener((e) -> {
             String usernameField = username.getText().toString();
             String passwordField = password.getText().toString();
+            int flag = 0;
+            if (usernameField.isEmpty()) {
+                usernameError.setText("Username can't be empty");
+                usernameError.setVisibility(View.VISIBLE);
+            } else if (usernameField.length() < 6){
+                usernameError.setText("Username must be more than 5 character");
+                usernameError.setVisibility(View.VISIBLE);
+            } else{
+                flag = 1;
+                usernameError.setVisibility(View.GONE);
+            }
+            if (passwordField.isEmpty()) {
+                passwordError.setText("Password can't be empty");
+                passwordError.setVisibility(View.VISIBLE);
+                flag = 0;
+            } else if (passwordField.length() < 9) {
+                passwordError.setText("Password must be more than 8 character");
+                passwordError.setVisibility(View.VISIBLE);
+                flag = 0;
+            } else{
+                flag = 1;
+                passwordError.setVisibility(View.GONE);
+            }
 
-            if (usernameField.isEmpty() || passwordField.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Please input all fields", Toast.LENGTH_SHORT).show();
-            } else {
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                builder.setTitle("Success");
-                builder.setMessage("You have successfully logged in!");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent toHome = new Intent(LoginActivity.this, HomeActivity.class);
-                        // passing data
-                        toHome.putExtra("username", usernameField);
-                        startActivity(toHome);
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
+            if(flag == 1) {
+                // Save the username in SharedPreferences
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("username", usernameField);
+                editor.apply();
+
+                Intent toHome = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(toHome);
             }
         });
     }
