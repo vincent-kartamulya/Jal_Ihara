@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rounded_border.xml -->
+<!-- rounded_image_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="100dp" /> <!-- Set the corner radius to create rounded corners -->
+</shape>
+
+
