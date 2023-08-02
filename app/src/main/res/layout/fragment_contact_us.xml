@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    tools:context=".ContactUs">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/getInTouch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingVertical="10dp"
+            android:text="@string/get_in_touch"
+            android:textColor="@color/cream"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:typeface="serif"/>
+
+        <TextView
+            android:id="@+id/contactUsSentence"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contactus_sentence"
+            app:layout_constraintTop_toBottomOf="@id/getInTouch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingVertical="20dp"
+            style="@style/aboutUs_1"/>
+
+        <LinearLayout
+            android:id="@+id/twitter_acc"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/contactUsSentence"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/twt_logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/twitter_logo"
+                android:padding="0dp" />
+
+            <TextView
+                android:id="@+id/twt_acc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/twt_text"
+                style="@style/account"
+                android:paddingVertical="2dp"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/facebook_acc"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/twitter_acc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/fb_logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/facebook_logo"
+                android:padding="0dp" />
+
+            <TextView
+                android:id="@+id/fb_acc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/fb_text"
+                style="@style/account"
+                android:paddingVertical="2dp"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/instagram_acc"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/facebook_acc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/ig_logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/instagram_logo"
+                android:padding="0dp" />
+
+            <TextView
+                android:id="@+id/ig_acc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/ig_text"
+                style="@style/account"
+                android:paddingVertical="2dp"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sendMsgText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/instagram_acc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="25dp"
+            android:paddingBottom="15dp"
+            android:text="@string/send_msg"
+            android:textColor="@color/cream"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <EditText
+            android:id="@+id/msg_username"
+            android:layout_width="300dp"
+            android:layout_height="28dp"
+            app:layout_constraintTop_toBottomOf="@id/sendMsgText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            android:hint="@string/hint_usn"
+            android:typeface="serif"
+            android:textSize="14sp"
+            android:textColor="@color/old_gray"
+            android:textColorHint="@color/old_gray"
+            android:background="@color/cream"
+            android:paddingHorizontal="10dp"/>
+
+        <EditText
+            android:id="@+id/msg_email"
+            android:layout_width="300dp"
+            android:layout_height="28dp"
+            app:layout_constraintTop_toBottomOf="@id/msg_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_email"
+            android:typeface="serif"
+            android:textSize="14sp"
+            android:textColor="@color/old_gray"
+            android:textColorHint="@color/old_gray"
+            android:background="@color/cream"
+            android:paddingHorizontal="10dp"/>
+
+        <EditText
+            android:id="@+id/msg_phoneNumb"
+            android:layout_width="300dp"
+            android:layout_height="28dp"
+            app:layout_constraintTop_toBottomOf="@id/msg_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_phone"
+            android:typeface="serif"
+            android:textSize="14sp"
+            android:textColor="@color/old_gray"
+            android:textColorHint="@color/old_gray"
+            android:background="@color/cream"
+            android:paddingHorizontal="10dp"/>
+
+        <EditText
+            android:id="@+id/msg_longText"
+            android:layout_width="300dp"
+            android:layout_height="142dp"
+            app:layout_constraintTop_toBottomOf="@id/msg_phoneNumb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_message"
+            android:typeface="serif"
+            android:textSize="14sp"
+            android:textColor="@color/old_gray"
+            android:textColorHint="@color/old_gray"
+            android:background="@color/cream"
+            android:paddingHorizontal="10dp" />
+
+        <Button
+            android:id="@+id/buttonSendMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/msg_longText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="25dp"
+            android:text="@string/btn_sendMsg"
+            android:typeface="serif"
+            android:textColor="@color/cream"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:backgroundTint="@color/red"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/buttonSendMsg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/cc"
+            style="@style/performance"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:paddingVertical="10dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

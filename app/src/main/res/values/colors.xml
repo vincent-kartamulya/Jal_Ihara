@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="button_default_color">#FBE6C2</color>
     <color name="button_pressed_color">#FFA500</color>
+    <color name="cream">#FBE6C2</color>
+    <color name="gold">#F0C929</color>
+    <color name="old_gray">#666963</color>
+    <color name="red">#D51212</color>
 </resources>
