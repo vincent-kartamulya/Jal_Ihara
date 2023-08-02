@@ -19,4 +19,6 @@ public class MainActivity extends AppCompatActivity {
         Intent startPoint = new Intent(MainActivity.this,AboutContactActivity.class);
         startActivity(startPoint);
     }
+
+
 }
