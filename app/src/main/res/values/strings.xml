@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">JalIhara</string>
+        <string name="hint_username">Username</string>
+        <string name="hint_password">Password</string>
+        <string name="forgot_password">Forgot Password?</string>
+        <string name="login">Login</string>
+        <string name="have_acc">Already have an account?</string>
+        <string name="register_here">Register here</string>
+        <string name="about_us">About Us</string>
+        <string name="contact_us">Contact Us</string>
+        <string name="store_img">Store Image</string>
+        <string name="aboutus_sentence">is a place where you can find many interesting Traditional Art Performance. Immerse yourself in the rich tapestry of culture on our app as we bring you a selection of mesmerizing performances from all around Indonesia.</string>
+        <string name="music">Music</string>
+        <string name="dance">Dance</string>
+        <string name="opera">Opera</string>
+        <string name="theatre">Theatre</string>
+        <string name="performance">performance</string>
+        <string name="aboutus_sentence_2">Join us as we celebrate the magic of traditional arts and connect you with breathtaking performances that will leave you mesmerized.
+Let the show begin!</string>
+        <string name="get_in_touch">Get in touch with Us!</string>
+        <string name="contactus_sentence">We would love to speak to you. Feel free to contact us through the platforms below, or simply complete the existing form.</string>
+        <string name="twt_text">\@JalIhara_Official</string>
+        <string name="fb_text">JalIhara Official</string>
+        <string name="ig_text">\@jalihara_ofc</string>
+        <string name="send_msg">Send us message directly:</string>
+        <string name="hint_usn">Your Name</string>
+        <string name="hint_email">Email Address</string>
+        <string name="hint_phone">Phone Number</string>
+        <string name="hint_message">Type a message...</string>
+        <string name="btn_sendMsg">SEND MESSAGE</string>
+        <string name="cc">2023 - JalIhara</string>
 </resources>

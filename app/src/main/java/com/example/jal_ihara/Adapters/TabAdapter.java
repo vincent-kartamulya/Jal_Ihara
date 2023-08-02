@@ -1,0 +1,32 @@
+package com.example.jal_ihara.Adapters;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.jal_ihara.AboutUs;
+import com.example.jal_ihara.ContactUs;
+
+public class TabAdapter extends FragmentStateAdapter {
+
+    public TabAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+        super(fragmentManager, lifecycle);
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        switch (position) {
+            case 0: return new AboutUs();
+            case 1: return new ContactUs();
+        }
+        return new AboutUs();
+    }
+
+    @Override
+    public int getItemCount() {
+        return 2;
+    }
+}
